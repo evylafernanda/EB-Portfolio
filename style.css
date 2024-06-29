@@ -1,0 +1,593 @@
+/*ESTILO GERAL*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #000000;
+    height: 100vh;
+}
+
+.interface {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+}
+
+h2.titulo {
+    color: #fff;
+    font-size: 32px;
+    text-align: center;
+
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+
+
+/*ESTILO DO CABEÇALHO*/
+header {
+    padding: 10px 2%;
+
+}
+
+header>.interface {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+header a {
+    color: #cbc9c9f7;
+    text-decoration: none;
+    display: inline-block;
+    transition: scale(2);
+}
+
+
+header nav.menu-desktop a:hover {
+    color: #fff;
+    transform: scale(1.09);
+
+}
+
+header nav ul {
+    list-style: none;
+}
+
+header nav.menu-desktop ul li {
+    display: inline-block;
+    padding: 0 40px;
+
+}
+
+header .bnt-CV button {
+    padding: 4px 4px;
+    font-size: 18px;
+    font-weight: 300;
+    background-color: transparent;
+    border: 2px solid rgb(255, 60, 219);
+    color: rgb(255, 60, 219);
+    cursor: pointer;
+
+}
+
+
+header .bnt-CV button:hover {
+    color: #fff;
+    background-color: rgb(255, 60, 219);
+    box-shadow: 0 0 2px rgba(255, 60, 219, 0.731);
+
+}
+
+/*ESTILO DO MENU MOBILE*/
+.btn-abrir-menu {
+    display: none; /* Esconde o botão por padrão */
+}
+
+@media screen and (max-width: 1245px) {
+    .btn-abrir-menu {
+        display: block; /* Mostra o botão em telas pequenas */
+    }
+
+    .menu-desktop,
+    .bnt-CV {
+        display: none; /* Esconde o menu desktop e botão CV em telas pequenas */
+    }
+}
+
+.btn-abrir-menu i{
+    color: rgb(255, 60, 219);
+    font-size: 40px;
+}
+
+.menu-mobile{
+    background-color: rgb(0, 0, 0);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 99999;
+    width: 0%;
+    overflow: hidden;
+    transition: .2s;
+}
+
+.menu-mobile.abrir-menu{
+    width: 70%;
+}
+
+.menu-mobile.abrir-menu ~ .overlay-menu{
+    display: block;
+
+}
+
+.menu-mobile .btn-fechar{
+    padding: 2opx 8%;
+    
+}
+
+.menu-mobile .btn-fechar i{
+    color: rgb(255, 60, 219);
+    font-size: 30px;
+}
+
+.menu-mobile nav ul{
+    text-align: right;
+}
+
+.menu-mobile nav ul li a{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 20px 8%;
+    display: block;
+    
+}
+
+.menu-mobile nav ul li a:hover{
+    background-color: rgb(255, 60, 219);
+
+}
+
+.overlay-menu{
+    background-color: #000000d8;
+    width: 100%;
+    height: 100%;
+    position:fixed;
+    top: 0;
+    left: 0;
+    z-index: 88888;
+    display: none;
+}
+
+/*ESTILO DO TOPO DO SITE*/
+section.topo-do-site {
+    margin-bottom: 300px;
+    /* Adiciona margem inferior para distanciar a seção do conteúdo abaixo */
+}
+
+section.topo-do-site .txt-topo-site {
+    padding: 10px 0%;
+
+}
+
+section.topo-do-site .flex {
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+.topo-do-site .txt-topo-site h1 {
+    color: #fff;
+    font-size: 40px;
+
+}
+
+.topo-do-site .txt-topo-site p {
+    color: rgb(255, 60, 219);
+    font-size: 23px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.507);
+    overflow: hidden;
+    border-right: .15em solid rgb(255, 60, 219);
+    /* Cria o cursor piscante */
+    padding-right: 5px;
+    /* Adiciona espaço entre o cursor e o texto */
+    white-space: nowrap;
+    /* Garante que o texto não quebre em linhas */
+    margin: 2 auto;
+    /* Centraliza o texto */
+    letter-spacing: .15em;
+    /* Espaçamento entre letras */
+    animation: typing 3s steps(40, end), blink-caret .75s step-end infinite, piscar 1.02s infinite alternate;
+    /* Define as animações */
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: rgb(255, 0, 225)
+    }
+}
+
+
+.topo-do-site .imag-topo-site img {
+    position: relative;
+    animation: flutuar 2s ease-in-out infinite alternate;
+}
+
+@keyframes flutuar {
+    0% {
+        top: 0;
+    }
+
+    100% {
+        top: 30px;
+    }
+}
+
+.bnt-social {
+    display: flex;
+    gap: 12px; /* Espaçamento entre os ícones */
+}
+
+.bnt-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bnt-social button {
+    border: none;
+    font-size: 26px;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    transition: text-shadow 0.3s;
+}
+
+.bnt-social button:hover {
+    text-shadow: 0 0 5px rgb(255, 60, 219);
+}
+
+.imag-topo-site img {
+    width: 300px;
+    /* ou defina um valor específico */
+    height: auto;
+    /* isso manterá a proporção original da imagem */
+}
+
+/*ESTILO DA CERTIFICAÇÃO*/
+section.Certificações-box {
+    padding: 80px 4%;
+}
+
+section.Certificações .flex {
+    gap: 90px;
+    margin-bottom: 200px;
+}
+
+.Certificações .Certificações-box {
+    color: #fff;
+    padding: 40px;
+    border: 2px solid rgb(255, 60, 219);
+    box-shadow: 0 0 10px rgba(255, 60, 219, 0.7);
+    margin-top: 45px;
+    transition: 1.2s;
+
+}
+
+.Certificações .Certificações-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 8px rgba(255, 60, 219, 0.7);
+
+}
+
+
+.Certificações .Certificações-box h3 {
+    font-size: 20px;
+    color: rgb(255, 60, 219);
+
+}
+
+.Certificações-box span {
+    color: #ffffff7b;
+    /* Adicione a cor desejada para o <span> */
+}
+
+
+
+.Certificações-box button {
+    background-color: rgb(255, 60, 219);
+    /* Cor de fundo */
+    color: #fff;
+    /* Cor do texto */
+    border: none;
+    /* Remove a borda */
+    padding: 8px 10px;
+    /* Espaçamento interno */
+    cursor: pointer;
+    /* Altera o cursor ao passar por cima */
+    border-radius: 10px;
+    /* Borda arredondada */
+}
+
+.Certificações-box button:hover {
+    background-color: rgb(255, 60, 219);
+    /* Cor de fundo ao passar o mouse */
+    background-color: transparent;
+    border: 2px solid rgb(255, 60, 219);
+    color: rgb(255, 60, 219);
+    cursor: pointer;
+}
+
+/*ESTILO DO SOBRE MIM*/
+section.sobre {
+    margin-top: 80px;
+    /* Adiciona margem superior para distanciar a seção do conteúdo acima */
+    margin-bottom: 200px;
+    /* Adiciona margem inferior para distanciar a seção do conteúdo abaixo */
+}
+
+section.sobre {
+    padding: 80px 4%;
+
+}
+
+section.sobre .flex {
+    align-items: center;
+    gap: 60;
+}
+
+.sobre .txt-sobre {
+    color: #fff
+}
+
+.sobre .txt-sobre h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+
+.sobre .txt-sobre p {
+    margin: 20px 0;
+    text-align: left;
+
+}
+
+.sobre .txt-sobre span {
+    color: rgb(255, 60, 219);
+}
+
+.img-sobre img {
+    width: 300px;
+    height: auto;
+    display: block;
+    /* Remove qualquer espaço extra abaixo da imagem */
+}
+
+
+/* ESTILO DOS MEUS PROJETOS */
+.txt-projetos {
+    text-align: center;
+    margin-bottom: 80px;
+    /* Distância entre o cabeçalho e os cards */
+}
+
+.txt-projetos h2 {
+    font-size: 32px;
+    color: #fff;
+}
+
+.txt-projetos span {
+    color: rgb(255, 60, 219);
+    /* Cor para "projetos" */
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    width: 300px;
+    /* Largura do card */
+    margin: 0 20px 20px 20px;
+    /* Espaçamento entre os cards */
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.card-content {
+    text-align: center;
+}
+
+.card-content h3 {
+    margin-bottom: 8px;
+}
+
+.card-content p {
+    color: #666;
+}
+
+.buttons {
+    margin-top: 16px;
+}
+
+.button {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(255, 60, 219);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    text-align: center;
+    line-height: 40px;
+    margin-right: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: rgba(255, 60, 219, 0.474);
+}
+
+.card {
+    width: 300px;
+    margin: 0 16px 16px 16px;
+    border: 1px solid rgba(255, 60, 219, 0.766);
+    border-radius: 8px;
+    padding: 16px;
+    background-color: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    /* Zoom de 5% maior */
+    box-shadow: 0 8px 16px rgb(5, 5, 5);
+    /* Sombra mais pronunciada */
+}
+
+/*ESTILO DO RODAPÉ*/
+
+footer {
+    margin-top: 100px;
+    /* Adiciona margem superior para distanciar a seção do conteúdo acima */
+    padding: 9px 4%;
+    box-shadow: 0 0 40px 10px #ffffff1d;
+}
+
+.line-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.logo-footer img {
+    width: 100px;
+    height: auto;
+}
+
+.btn-social button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.btn-social button i {
+    color: #333;
+}
+
+footer .line-footer {
+    padding: 20px 0;
+}
+
+.borda {
+    border-top: 2px solid rgb(255, 60, 219);
+}
+
+.line-footer p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.line-footer p i {
+    margin-right: 5px;
+}
+
+footer .line-footer p i {
+    color: rgb(255, 60, 219);
+
+}
+
+footer .line-footer p a {
+    color: #fff;
+}
+
+@media screen and (max-width:1245px) {
+
+    /*CLASSES GERAIS*/
+    .flex {
+        flex-direction: column;
+    }
+
+    .topo-do-site .flex {
+        flex-direction: column-reverse;
+    }
+
+    .Certificações {
+        padding: 10px 8%;
+    }
+
+    .sobre .txt-sobre h2 {
+        text-align: center;
+    }
+
+    .sobre .txt-sobre p {
+        padding: 5px 8%;
+        font-size: 18px;
+        text-align: left;
+    }
+
+    section.topo-do-site {
+        margin-bottom: 50px;
+    }
+
+    section.Certificações .flex {
+        margin-bottom: 7px;
+    }
+    section.sobre {
+        margin-bottom: 10px;
+    }
+
+    /*CABEÇALHO*/
+    .menu-desktop,
+    .bnt-CV{
+        display: none;
+
+    }
+}
+
